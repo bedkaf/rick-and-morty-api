@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import Navbar from "./components/Navbar";
+//import GetData from "./data/GetData";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [characters, setCharacters] = useState([]);
+
+  const urlBase = "https://rickandmortyapi.com/api/character"
+
+  function GetData(url) {
+    fetch(url)
+      .then(response => response.json())
+      .then(data => setCharacters(data.results))
+      .catch(error => console.log(`prodijo un error al mometno d extraer los datos: ${error}`))
+
+  }
+  useEffect(() => {
+    GetData(urlBase);
+  }, [])
+
+  return ( 
+    <>
+      <Navbar titulo = {'rick and morty api'} />
+    </>
   );
 }
 
