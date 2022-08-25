@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-//import GetData from "./data/GetData";
+import Card from "./components/Card";
+import GetCharacter from "./components/GetCharacter";
 
 
 function App() {
@@ -22,6 +23,11 @@ function App() {
   return ( 
     <>
       <Navbar titulo = {'rick and morty api'} />
+
+      <div className="container">
+      <GetCharacter character={characters}/>
+      </div>
+
     </>
   );
 }

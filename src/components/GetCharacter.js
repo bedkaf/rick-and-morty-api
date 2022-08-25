@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const GetCharacter = ({character = []}) => {
   return (
-    <div className="row" style={{minWidth}}>
+    <div className="row">
       {
         character.map((item, index) => (
           <div key={index} className="col">
