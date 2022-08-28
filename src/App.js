@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
-import Card from "./components/Card";
 import GetCharacter from "./components/GetCharacter";
 import Navigation from "./components/Navigation";
 
